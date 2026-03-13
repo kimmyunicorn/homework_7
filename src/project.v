@@ -17,7 +17,7 @@ module full_add (
     assign sum_o = result[3:0];
     assign carry_o = result[4];
 
-    end
+
 endmodule
 
 module tt_um_example (
