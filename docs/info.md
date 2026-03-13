@@ -1,20 +1,25 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
 ## How it works
 
-Explain how your project works
+This project implements a 4-bit full adder. It takes two 4-bit inputs (A and B) 
+and a 1-bit carry-in, and produces a 4-bit sum and a 1-bit carry-out.
+
+The pin mapping is:
+- ui_in[3:0] - input A
+- ui_in[4] - carry-in
+- uio_in[3:0] - input B
+- uo_out[3:0] - sum output
+- uo_out[4] - carry out
+
+The adder uses an always_comb block to compute a 5-bit result, then splits it 
+into a 4-bit sum and 1-bit carry-out.
 
 ## How to test
 
-Explain how to use your project
+The cocotb testbench in test/test.py tests the adder with 8 test cases covering
+zero inputs, basic addition, mid-range values, max values with and without 
+carry-in, and carry propagation. Each test checks both the 4-bit sum and 
+carry-out against the expected result.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+None.
